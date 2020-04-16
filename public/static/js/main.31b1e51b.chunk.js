@@ -1,0 +1,2 @@
+(this.webpackJsonpclient=this.webpackJsonpclient||[]).push([[0],{19:function(e,n,t){e.exports=t(29)},24:function(e,n,t){},29:function(e,n,t){"use strict";t.r(n);var a=t(4),c=t.n(a),r=t(13),l=t.n(r),i=t(18),u=t(31),o=(t(24),new i.a({uri:"/graphql"}));var s=function(){return c.a.createElement(u.a,{client:o},c.a.createElement("div",{className:"App"},c.a.createElement("h1",null,"COVID France API")))};l.a.render(c.a.createElement(c.a.StrictMode,null,c.a.createElement(s,null)),document.getElementById("root"))}},[[19,1,2]]]);
+//# sourceMappingURL=main.31b1e51b.chunk.js.map
