@@ -12,18 +12,13 @@ const fetch = require('node-fetch');
 const url =
   'https://www.data.gouv.fr/fr/datasets/r/63352e38-d353-4b54-bfd1-f1b3ee1cabd7';
 
-const departmentsData = [
-  { department_number: 1, hosp: 10, rea: 0, rad: 0, dc: 0 },
-  { department_number: 2, hosp: 3, rea: 0, rad: 0, dc: 0 },
-];
-
 // define the different types
 const DepartmentType = new GraphQLObjectType({
   name: 'Department',
   fields: () => ({
     department_number: { type: GraphQLID },
     sexe: { type: GraphQLInt },
-    day: { type: GraphQLString },
+    date: { type: GraphQLString },
     hosp: { type: GraphQLInt },
     rea: { type: GraphQLInt },
     rad: { type: GraphQLInt },
@@ -48,15 +43,36 @@ const RootQuery = new GraphQLObjectType({
             newData.map((line) => {
               const entry = line.split(';');
               if (entry[0] && entry[0] !== '"dep"' && entry[1]) {
-                dataSet.push({
-                  department_number: entry[0].replace(/"/g, ''),
-                  sexe: parseInt(entry[1]),
-                  day: entry[2].replace(/"/g, ''),
-                  hosp: parseInt(entry[3]),
-                  rea: parseInt(entry[4]),
-                  rad: parseInt(entry[5]),
-                  dc: parseInt(entry[6]),
-                });
+                newEntry = {};
+                newEntry.department_number = entry[0].replace(/"/g, '');
+                newEntry.date = entry[2].replace(/"/g, '');
+                if (
+                  parseInt(entry[1].replace(/"/g, '')) ||
+                  parseInt(entry[1].replace(/"/g, '')) == 0
+                )
+                  newEntry.sexe = parseInt(entry[1].replace(/"/g, ''));
+                if (
+                  parseInt(entry[3].replace(/"/g, '')) ||
+                  parseInt(entry[3].replace(/"/g, '')) == 0
+                )
+                  newEntry.hosp = parseInt(entry[1].replace(/"/g, ''));
+                if (
+                  parseInt(entry[4].replace(/"/g, '')) ||
+                  parseInt(entry[4].replace(/"/g, '')) == 0
+                )
+                  newEntry.rea = parseInt(entry[1].replace(/"/g, ''));
+                if (
+                  parseInt(entry[5].replace(/"/g, '')) ||
+                  parseInt(entry[5].replace(/"/g, '')) == 0
+                )
+                  newEntry.rad = parseInt(entry[1].replace(/"/g, ''));
+                if (
+                  parseInt(entry[6].replace(/"/g, '')) ||
+                  parseInt(entry[6].replace(/"/g, '')) == 0
+                )
+                  newEntry.dc = parseInt(entry[1].replace(/"/g, ''));
+
+                dataSet.push(newEntry);
               }
             });
             return dataSet;
@@ -76,15 +92,36 @@ const RootQuery = new GraphQLObjectType({
             newData.map((line) => {
               const entry = line.split(';');
               if (entry[0] && entry[0].replace(/"/g, '') === id) {
-                dataSet.push({
-                  department_number: entry[0].replace(/"/g, ''),
-                  sexe: parseInt(entry[1]),
-                  day: entry[2].replace(/"/g, ''),
-                  hosp: parseInt(entry[3]),
-                  rea: parseInt(entry[4]),
-                  rad: parseInt(entry[5]),
-                  dc: parseInt(entry[6]),
-                });
+                newEntry = {};
+                newEntry.department_number = entry[0].replace(/"/g, '');
+                newEntry.date = entry[2].replace(/"/g, '');
+                if (
+                  parseInt(entry[1].replace(/"/g, '')) ||
+                  parseInt(entry[1].replace(/"/g, '')) == 0
+                )
+                  newEntry.sexe = parseInt(entry[1].replace(/"/g, ''));
+                if (
+                  parseInt(entry[3].replace(/"/g, '')) ||
+                  parseInt(entry[3].replace(/"/g, '')) == 0
+                )
+                  newEntry.hosp = parseInt(entry[1].replace(/"/g, ''));
+                if (
+                  parseInt(entry[4].replace(/"/g, '')) ||
+                  parseInt(entry[4].replace(/"/g, '')) == 0
+                )
+                  newEntry.rea = parseInt(entry[1].replace(/"/g, ''));
+                if (
+                  parseInt(entry[5].replace(/"/g, '')) ||
+                  parseInt(entry[5].replace(/"/g, '')) == 0
+                )
+                  newEntry.rad = parseInt(entry[1].replace(/"/g, ''));
+                if (
+                  parseInt(entry[6].replace(/"/g, '')) ||
+                  parseInt(entry[6].replace(/"/g, '')) == 0
+                )
+                  newEntry.dc = parseInt(entry[1].replace(/"/g, ''));
+
+                dataSet.push(newEntry);
               }
             });
             return dataSet;
