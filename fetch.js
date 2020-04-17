@@ -1,5 +1,9 @@
 const fetch = require('node-fetch');
 
-fetch(
-  'https://www.data.gouv.fr/fr/datasets/r/08c18e08-6780-452d-9b8c-ae244ad529b3'
-);
+fetch('https://france-geojson.gregoiredavid.fr/repo/departements.geojson')
+  .then((res) => res.json())
+  .then((data) =>
+    data.features.map((dep) => {
+      if (dep.properties.code === '38') console.log(dep.properties.nom);
+    })
+  );

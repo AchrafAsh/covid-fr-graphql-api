@@ -13,6 +13,9 @@ const genderDataUrl =
 const ageDataUrl =
   'https://www.data.gouv.fr/fr/datasets/r/08c18e08-6780-452d-9b8c-ae244ad529b3';
 
+const geoData =
+  'https://france-geojson.gregoiredavid.fr/repo/departements.geojson';
+
 // define the different types
 const DepartmentType = new GraphQLObjectType({
   name: 'Department',
