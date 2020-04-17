@@ -1,1 +1,2 @@
-informations to come...
+Check it live at:
+covidfranceapi.herokuapp.com
