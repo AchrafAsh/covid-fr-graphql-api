@@ -55,22 +55,22 @@ const RootQuery = new GraphQLObjectType({
                   parseInt(entry[3].replace(/"/g, '')) ||
                   parseInt(entry[3].replace(/"/g, '')) == 0
                 )
-                  newEntry.hosp = parseInt(entry[1].replace(/"/g, ''));
+                  newEntry.hosp = parseInt(entry[3].replace(/"/g, ''));
                 if (
                   parseInt(entry[4].replace(/"/g, '')) ||
                   parseInt(entry[4].replace(/"/g, '')) == 0
                 )
-                  newEntry.rea = parseInt(entry[1].replace(/"/g, ''));
+                  newEntry.rea = parseInt(entry[4].replace(/"/g, ''));
                 if (
                   parseInt(entry[5].replace(/"/g, '')) ||
                   parseInt(entry[5].replace(/"/g, '')) == 0
                 )
-                  newEntry.rad = parseInt(entry[1].replace(/"/g, ''));
+                  newEntry.rad = parseInt(entry[5].replace(/"/g, ''));
                 if (
                   parseInt(entry[6].replace(/"/g, '')) ||
                   parseInt(entry[6].replace(/"/g, '')) == 0
                 )
-                  newEntry.dc = parseInt(entry[1].replace(/"/g, ''));
+                  newEntry.dc = parseInt(entry[6].replace(/"/g, ''));
 
                 dataSet.push(newEntry);
               }
@@ -104,22 +104,22 @@ const RootQuery = new GraphQLObjectType({
                   parseInt(entry[3].replace(/"/g, '')) ||
                   parseInt(entry[3].replace(/"/g, '')) == 0
                 )
-                  newEntry.hosp = parseInt(entry[1].replace(/"/g, ''));
+                  newEntry.hosp = parseInt(entry[3].replace(/"/g, ''));
                 if (
                   parseInt(entry[4].replace(/"/g, '')) ||
                   parseInt(entry[4].replace(/"/g, '')) == 0
                 )
-                  newEntry.rea = parseInt(entry[1].replace(/"/g, ''));
+                  newEntry.rea = parseInt(entry[4].replace(/"/g, ''));
                 if (
                   parseInt(entry[5].replace(/"/g, '')) ||
                   parseInt(entry[5].replace(/"/g, '')) == 0
                 )
-                  newEntry.rad = parseInt(entry[1].replace(/"/g, ''));
+                  newEntry.rad = parseInt(entry[5].replace(/"/g, ''));
                 if (
                   parseInt(entry[6].replace(/"/g, '')) ||
                   parseInt(entry[6].replace(/"/g, '')) == 0
                 )
-                  newEntry.dc = parseInt(entry[1].replace(/"/g, ''));
+                  newEntry.dc = parseInt(entry[6].replace(/"/g, ''));
 
                 dataSet.push(newEntry);
               }
