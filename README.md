@@ -1,4 +1,4 @@
-### <a target='_blank' href='covidfranceapi.herokuapp.com'>Check it live</a>
+### <a target='_blank' href='http://covidfranceapi.herokuapp.com/'>Check it live</a>
 
 ### Demo
 
@@ -6,7 +6,7 @@
 
 ### Api
 
-go to <a href='covidfranceapi.herokuapp/graphql'>Graphiql</a> interface to play with the different schema I've implemented.
+go to <a href='http://covidfranceapi.herokuapp.com/graphql'>Graphiql</a> interface to play with the different schema I've implemented.
 
 ### Feedback
 
